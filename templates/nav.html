@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet" href='static/css/style.css'
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+     
+      {% load static %}
+        <title>Login</title>
+    </head>
+    <body>
+    
+  <div class='navactive'></div>
+  <div class='topmenu'>
+    <!-- orange top menue -->
+      <div id=imagediv>
+        <img src="/media/images/logo.png" alt="xcell logo"/>
+      </div>
+      <div class= 'white_welcome'>
+
+        <h6>Welcome {{user}}({{user.title}})</h6> 
+        
+      </div>
+      <div id='inverted_border'></div>
+     </div>
+     <!-- end orange top menue -->
+<div class ='parentflex'>
+<div class ='navbar1'>
+  <ul class="navbar-nav ">
+    <li class="nav-item">
+      <div id='flexbox2' >  
+        <button type='button' class="accordian__button" class="accordian__button--active">Admin</button>
+        <ul class='accordian__content'>
+          <li><a href="/signup/">Add New Employee</a></li>
+          <li><a href="/admin/">Add Permission</a></li>
+          <li><a href="/admin/">Admin Home</a></li>
+        </ul  
+      </div>
+    </li>
+ 
+  <li class="nav-item">
+    <a class="nav-link" href="/">Dashboard</a>
+  </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/profile/{{user.id}}/">Profile</a>
+    </li>
+    <li class="nav-item">
+      <button type='button' class="accordian__button" class="accordian__button--active">Cases</button>
+      <ul class='accordian__content'>
+      <li><a href="/accession/">Completed Cases</a></li>
+      </ul>
+    <li class="nav-item">
+      <button type='button' class="accordian__button" class="accordian__button--active">Accessioning</button>
+      <ul class='accordian__content'>
+        <li><a href="/accession/">Add New Case</a></li>
+        <li><a href="/floform">Pre-Accessioning</a></li>
+      </ul>                      
+    </li>
+    <li class="nav-item">
+      <button type='button' class="accordian__button" class="accordian__button--active">Reporting</button>
+      <ul class='accordian__content'>
+        <li><a href="/morphology/">MORPHO</a></li>
+        <li><a href="/">FLOW</a></li>
+        <li><a href="/FSform/">Report</a></li>
+        <li><a href="/FISH/">FISH </a></li>
+        <li><a href="/molecular/">MOLECULAR</a></li>
+        <li><a href="/preform/">Prelim Path</a></li>
+        <li><a href="finform/">Final Path</a></li>
+      </ul>  
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/Signature/">Signature</a>
+    </li>
+    <li class="nav-item">
+      <button type='button' class="accordian__button" class="accordian__button--active">Financial</button>
+      <ul class='accordian__content'>
+        <li><a href="/assign11/{{user.id}}">Billing</a></li>
+    </ul> 
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/logout/">Log Out</a>
+    </li>
+    </ul>
+    </div>
+<style>
+.topmenu{
+  display: flex;
+  width: 100%;
+  height: 55px;
+  background-color: orange;
+  box-shadow: 5px 5px rgb(134, 117, 117) ;
+}
+h1{
+  margin-left: 15%;
+}          
+.navactive{
+  height: 10px;
+  width: 100%;
+  background-color: darkblue;
+}
+#imagediv{
+  margin-right: 80px;
+  height: 55px;
+  width: 128px;
+  background-color: green;
+}
+.white_welcome{
+  height: 55px;
+  color: white;
+  /* background-color: pink; */
+}
+.parentflex{
+  display: flex;
+/* background-color: blue; */
+}
+.navbar1{
+  box-shadow: 5px 5px rgb(134, 117, 117) ;
+  background-color: ghostwhite;
+  width: 200px;
+  height: 800px;
+  text-align: center;   
+}
+
+.accordian__button{
+  display: block;
+  width: 100%;
+  padding: 15px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: darkblue;
+  color: #ffffff;
+  text-align: center;
+  transition: 0.2s;
+
+}
+
+.accordian__button::after{
+  content: '\25be';
+  float: right;
+  transform: scale(1.5);
+}
+.accordian__button--active{
+  background: #555555;
+
+}
+.accordian__button--active::after{
+  content: '\25b4';
+    
+}
+.accordian__content{
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.2s;
+
+  padding: 0 15px;
+  font-family: sans-serif;
+  background: #eeeeee;
+}
+.accordian__button{
+  margin-top: 10px;
+  width: 200px;
+  cursor: pointer;
+  background: darkblue;
+  color: #ffffff;
+  text-align: center;
+  border-radius: 0px 25px 0px 25px;
+}
+.accordian__content{
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.2s;
+  padding: 0 15px;
+  font-family: sans-serif;
+  background: #eeeeee;
+}
+  button:focus{background-color: rgb(134, 117, 117);
+  color: black;
+}
+  #inverted_border{
+  margin-left: 125px;
+  margin-top: px;
+  position: absolute;
+  width: 75px;
+  height: 55px;
+  border-radius: 0 25px 0 0;
+  background-color: white;
+  
+}
+</style> 
+<script>
+  document.querySelectorAll('.accordian__button').forEach(button =>{
+    button.addEventListener('click', () =>{
+        const accordianContent = button.nextElementSibling;
+        button.classList.toggle('accordian__button--active');
+        if (button.classList.contains('accordian__button--active')){
+            accordianContent.style.maxHeight=accordianContent.scrollHeight + 'px';
+        }else{
+            accordianContent.style.maxHeight = 0;
+        }
+        });
+    });
+  
+  </script> 

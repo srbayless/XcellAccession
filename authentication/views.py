@@ -5,7 +5,7 @@ from authentication.models import UserModel
 from django.http import HttpResponse
 
 
-def LoginView(self, request):
+def LoginView(request):
     print(request)
     form = LoginForm(request.POST)
     if form.is_valid():
@@ -16,7 +16,7 @@ def LoginView(self, request):
             login(request, user)
             return HttpResponseRedirect(reverse("dashboard"))
         
-        return render(request, "login.html", {"form": form, 'header': self.header})    
+    return render(request, "login.html", {"form": form, })    
 
 
 def SignUpView(request):
