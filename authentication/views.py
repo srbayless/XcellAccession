@@ -3,20 +3,28 @@ from django.contrib.auth import login, logout, authenticate
 from authentication.forms import SignUpForm, LoginForm
 from authentication.models import UserModel
 from django.http import HttpResponse
+from django.views.generic import TemplateView
 
 
-def LoginView(request):
-    print(request)
-    form = LoginForm(request.POST)
-    if form.is_valid():
-        data = form.cleaned_data
-        print(data)
-        user = authenticate(request, username=data.get("username"), password=data.get("password",))
-        if user:
-            login(request, user)
-            return HttpResponseRedirect(reverse("dashboard"))
-        
-    return render(request, "login.html", {"form": form, })    
+class LoginView(TemplateView):
+    header = "Login"
+    
+    def get(self, request):
+        form = LoginForm()
+        return render(request, "login.html", {"form": form, 'header': self.header})
+
+    def post(self, request):
+        print(request)
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            data = form.cleaned_data
+            print(data)
+            user = authenticate(request, username=data.get("username"), password=data.get("password",))
+            if user:
+                login(request, user)
+                return HttpResponseRedirect(reverse("dashboard"))
+            
+            return render(request, "login.html", {"form": form, 'header': self.header})     
 
 
 def SignUpView(request):

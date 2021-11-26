@@ -15,14 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from authentication.views import SignUpView, LoginView
-from web_app.views import AccessionView, IndexView
+from authentication import views as auth_views
+from web_app.views import AccessionView, IndexView, editView
+from django.conf.urls import url, include
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', IndexView, name='dashboard'),
-    path('signup/', SignUpView),
-    path('login/', LoginView),
-    path('accession/', AccessionView )
+    path('signup/', auth_views.SignUpView),
+    path('login/', auth_views.LoginView.as_view(), name='login'),
+    path('logout/', auth_views.LogoutView, name = 'logout'),
+    path('accession/', AccessionView),
+    path('review/', editView, name='review'),
+    url(r'^search/', include(('search.urls', 'search'), namespace='search')),
 ]

@@ -50,6 +50,25 @@ Django = ">=1.10"
 
 [[package]]
 category = "main"
+description = "An international phone number field for django models."
+name = "django-phonenumber-field"
+optional = false
+python-versions = ">=3.6"
+version = "6.0.0"
+
+[package.dependencies]
+Django = ">=2.2"
+
+[package.dependencies.phonenumbers]
+optional = true
+version = ">=7.0.2"
+
+[package.extras]
+phonenumbers = ["phonenumbers (>=7.0.2)"]
+phonenumberslite = ["phonenumberslite (>=7.0.2)"]
+
+[[package]]
+category = "main"
 description = "alias."
 name = "django-rest-framework"
 optional = false
@@ -69,6 +88,14 @@ version = "3.12.4"
 
 [package.dependencies]
 django = ">=2.2"
+
+[[package]]
+category = "main"
+description = "Python version of Google's common library for parsing, formatting, storing and validating international phone numbers."
+name = "phonenumbers"
+optional = false
+python-versions = "*"
+version = "8.12.37"
 
 [[package]]
 category = "main"
@@ -95,7 +122,7 @@ python-versions = ">=3.5"
 version = "0.4.2"
 
 [metadata]
-content-hash = "46bc31f65ad5e611b5853e7db80c0b8f9b2dc573aa151c4e8bac2c1e9e1263fd"
+content-hash = "1c74eaff178873154e29d7416d713086340128e41130eb474b5ac767425ceabb"
 lock-version = "1.0"
 python-versions = "^3.9"
 
@@ -116,12 +143,20 @@ django-phone-field = [
     {file = "django-phone-field-1.8.1.tar.gz", hash = "sha256:db63af60fc3a3c66b9faa7e72bb7972cd1518299f2e93d68dd95d8df6214f7ed"},
     {file = "django_phone_field-1.8.1-py3-none-any.whl", hash = "sha256:407e74b65e8f7dd14d0a0aa89e277516d57ad6a09ce992cdd94e15b1624b9961"},
 ]
+django-phonenumber-field = [
+    {file = "django-phonenumber-field-6.0.0.tar.gz", hash = "sha256:9695d3beda772c503ad4e04a4f7012a8227e9e3e4fd0ea4ffb07c43245bf4a8d"},
+    {file = "django_phonenumber_field-6.0.0-py3-none-any.whl", hash = "sha256:bbb9cb2e6fc53c476de40428e1354c313a040e8b2fb69ea8ead4ba41a60f926a"},
+]
 django-rest-framework = [
     {file = "django-rest-framework-0.1.0.tar.gz", hash = "sha256:47a8f496fa69e3b6bd79f68dd7a1527d907d6b77f009e9db7cf9bb21cc565e4a"},
 ]
 djangorestframework = [
     {file = "djangorestframework-3.12.4-py3-none-any.whl", hash = "sha256:6d1d59f623a5ad0509fe0d6bfe93cbdfe17b8116ebc8eda86d45f6e16e819aaf"},
     {file = "djangorestframework-3.12.4.tar.gz", hash = "sha256:f747949a8ddac876e879190df194b925c177cdeb725a099db1460872f7c0a7f2"},
+]
+phonenumbers = [
+    {file = "phonenumbers-8.12.37-py2.py3-none-any.whl", hash = "sha256:355956697047bc89efd89909373a0bdc50ac725c5613b2684a478d6b408a4010"},
+    {file = "phonenumbers-8.12.37.tar.gz", hash = "sha256:dbc560992844a059f56c7c0c6a587904e65d956740bbfb7e39589980bc9055b8"},
 ]
 pillow = [
     {file = "Pillow-8.4.0-cp310-cp310-macosx_10_10_universal2.whl", hash = "sha256:81f8d5c81e483a9442d72d182e1fb6dcb9723f289a57e8030811bac9ea3fef8d"},

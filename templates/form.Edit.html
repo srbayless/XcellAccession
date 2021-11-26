@@ -1,0 +1,13 @@
+style>
+  button{
+    padding-right: 30px;
+  }
+</style>
+
+<form method="POST">
+  {% csrf_token %}
+  Author: <button>{{request.user}}</button>
+
+  {{ form.as_p }}
+  <input type='submit' value='Submit' />
+</form>

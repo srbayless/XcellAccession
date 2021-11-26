@@ -1,0 +1,35 @@
+<style>
+    .search{
+        position: absolute;
+        margin-left: 1000px;
+    }
+</style>
+
+
+<div class='search'></div>
+<form action="GET" method="GET" value="{{request.GET.q}}">
+<input type="text" name="q" value="{{request.GET.q}}" placeholder="Last Name"/>
+<input type="submit" name="submit" value="Search"/>
+</form>
+</div>
+
+{% if submitbutton == 'Search' and request.GET.q != '' %}
+{% if results %}
+<h1>Results for <b>{{ request.GET.q }}</b></h1>
+<br/><br/>
+
+{% for result in results %}
+
+{{result.lastName}}
+<br/>
+
+{{result.firstName}}
+<br/>
+{{result.birthdate}}
+<br/>
+
+{% endfor %}
+{% else %}
+Not Found
+{% endif %}
+{% endif %}
