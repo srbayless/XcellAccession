@@ -9,7 +9,7 @@
        <div id ='patient'>
            {{form.last_name }}{{form.first_name }}{{form.midIntl }}
          <div id='background'>
-          <h6>&nbsp; DOB: {{form.dob}}</h6>
+          <h6>&nbsp; Birth: {{form.birthdate}}</h6>
           <p>&nbsp; Gender: {{form.gender}}
             {% for a in Age %}
           &nbsp;&nbsp; &nbsp;&nbsp;{{a.Age }}Age</p>
@@ -265,7 +265,7 @@
  .form-control{
    font-size: 40px;
  }
- #id_patient_dob{
+ #id_birthdate{
   
    height: 20px;
    font-size: 10px;
@@ -328,7 +328,7 @@
    border: none;
    vertical-align: top;
  }
- #id_patientPhone{
+ #id_patphone{
    border: none;
    
  }  

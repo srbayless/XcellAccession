@@ -16,17 +16,19 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from authentication import views as auth_views
-from web_app.views import AccessionView, IndexView, editView
+from web_app import views
 from django.conf.urls import url, include
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', IndexView, name='dashboard'),
+    path('', views.IndexView, name='dashboard'),
     path('signup/', auth_views.SignUpView),
     path('login/', auth_views.LoginView.as_view(), name='login'),
     path('logout/', auth_views.LogoutView, name = 'logout'),
-    path('accession/', AccessionView),
-    path('review/', editView, name='review'),
+    path('accession/', views.AccessionView),
+    path('review/', views.editView, name='review'),
+    path('FSform/', views.TestingView),
+    path('reports/', views.ReportView),
     url(r'^search/', include(('search.urls', 'search'), namespace='search')),
 ]

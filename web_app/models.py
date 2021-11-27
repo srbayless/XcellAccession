@@ -11,7 +11,7 @@ class PatientModel(models.Model):
     midIntl= models.CharField(max_length =5)
     pataddress= models.CharField(max_length =50)
     patcistzip= models.CharField(max_length =50)
-    patphone = PhoneField(blank=True, help_text='Contact phone number')
+    patphone= PhoneField(blank=True, help_text='Contact phone number')
     birthdate=models.CharField(max_length=30)
     gender=models.CharField(max_length=30)
     ssn=models.CharField(max_length=30)
@@ -19,11 +19,11 @@ class PatientModel(models.Model):
     patientId=models.CharField(max_length=30)
 
 class CaseModel(models.Model):
-    date_received = models.DateTimeField(default=timezone.now)
-    patient = models.ForeignKey("PatientModel", on_delete=models.CASCADE)
-    ordering_provider = models.ForeignKey("OrderingProviderModel", on_delete=models.CASCADE)
-    treating_provider = models.ForeignKey("TreatingProviderModel", on_delete=models.CASCADE, blank=True)
-    facility = models.ForeignKey("FacilityModel", on_delete=models.CASCADE)
+    date_received=models.DateTimeField(default=timezone.now)
+    patient=models.ForeignKey("PatientModel", on_delete=models.CASCADE)
+    ordering_provider=models.ForeignKey("OrderingProviderModel", on_delete=models.CASCADE)
+    treating_provider=models.ForeignKey("TreatingProviderModel", on_delete=models.CASCADE, blank=True)
+    facility=models.ForeignKey("FacilityModel", on_delete=models.CASCADE)
   
 class Post(models.Model):
     lastName = models.CharField(max_length=30)
@@ -59,21 +59,20 @@ class ReportSelectionModel(models.Model):
 
 
 class OrderingProviderModel(models.Model):
-    lastName = models.CharField(max_length=20)
-    firstName = models.CharField(max_length=20)
+    Ordering_physician = models.CharField(max_length=20)
     fax = models.CharField(max_length=30)
 
 
 class TreatingProviderModel(models.Model):
-    lastName = models.CharField(max_length=20)
-    firstName = models.CharField(max_length=20)
+    Treating_physician= models.CharField(max_length=20)
     fax = models.CharField(max_length=30)
 
 
 class FacilityModel(models.Model):
+    facility_name=models.CharField(max_length=200)
     address = models.CharField(max_length=200)
     city_state_zip=models.CharField(max_length=200)
-    phone = models.CharField(max_length=10)
+    phone = PhoneField(blank=True, help_text='Contact phone number')
 
 
 

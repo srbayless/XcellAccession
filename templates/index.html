@@ -11,11 +11,14 @@
       crossorigin="anonymous"/>
       {% load static %}
       <link rel='stylesheet' href="{% static 'css/default.css' %}">
-        <title>Dashboard/title>
+        <title>Dashboard</title>
     </head>
     <body>
         {% include 'nav.html' %}
         <form action='' method="POST">
-            {%csrf_token%}{header.as_p}
+            {%csrf_token%}
         </form>
+        {% for query in queries %}
+        {{ query.name}}<br/>
+        {% endfor %}
     </body>    

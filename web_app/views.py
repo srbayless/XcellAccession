@@ -1,7 +1,8 @@
 from django.shortcuts import render,  HttpResponseRedirect, reverse, redirect
-from .forms import AccessionForm
+from .forms import AccessionForm, FISHForm
 from .models import PatientModel, ReportModel, SpecimenModel, CaseModel, ReportSelectionModel
 from authentication.models import UserModel
+from django.core.paginator import Paginator, EmptyPage
 
 
 
@@ -156,4 +157,18 @@ def DashboardView(request):
         return render(request, 'index.html',{'current_user': current_user, 'cases': cases ,'emptitle': emptitle})
     else:
         return redirect("/login")
-   
+
+def ReportView(request):
+    return render(request, 'reports.html')        
+
+def QueryResults(request):
+    results=PatientModel.object.all()
+    context = {"queries" : results}
+    return render(request, 'index.html', context)
+     
+     
+     
+     
+     #for num in range (100)
+     #results = PatientModel(name=f'PatientModel{num}')
+     #stuff.save()  

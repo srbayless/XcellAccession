@@ -15,7 +15,7 @@ class AccessionForm(forms.Form):
     ssn=forms.CharField( widget=forms.TextInput(attrs={'placeholder': 'SSN xxx-xx-xxxx', 'style': 'height: 30px; width: 250px', 'class': 'form-control'}))
     pataddress=forms.CharField(label=False, widget=forms.TextInput(attrs={'style': 'height: 30px; width: 272px; overflow: hidden', 'class': 'form-controls'}))
     patcistzip = forms.CharField(label=False, widget=forms.TextInput(attrs={'style': 'height: 30px; width: 272px', 'class': 'form-controls'}))
-    patientphone=PhoneNumberField(region="US", label = False, widget=forms.TextInput(attrs={'style': 'height: 30px; width: 160px', 'class': 'form-controls'}))
+    patphone=PhoneNumberField(region="US", label = False, widget=forms.TextInput(attrs={'style': 'height: 30px; width: 160px', 'class': 'form-controls'}))
     patientId=forms.CharField( widget=forms.TextInput(attrs={'placeholder': 'Patient ID', 'style': 'height: 30px; width: 170px', 'class': 'form-control'}))
     date_received =  forms.DateField(label = False, widget=NumberInput(attrs={'type': 'date','style': 'height: 30px; width: 130px', 'class': 'form-controls'}))
     PHYCHOICES = [('N', 'None Selected'),('N', 'Joseph Aoki, M.D.'),('N', 'Glen Furuya, M.D.'),('N', 'Mayuko Imai, M.D'),('N', 'Martin Ishikawa, M.D.'),('N', 'Tai-Yuan David Lin, M.D. PhD'),('N', 'Chelestes Grace, M.D. '),('N', 'Matrina Schmidt M.D'),('N', 'Stephen Smith, M.D.'),('N', 'Sasha Raymond'),('N', 'Karen Thompson'),('N', 'Jeffrey Killeen, M.D.'),('N', 'Deen Wong, M.D.'),('N', 'Bruce Dorsey, M.D.'),('N', 'Rachel Lange, M.D.'),('N', 'Barry Shitamoto, M.D'),('N', 'Owen Chan, M.D., PhD'),('N', 'Zahida Parveen, M.D.'),('N', 'Robert Cao, M.D., PhD'),('N', 'Nathan Tokuda,')]
