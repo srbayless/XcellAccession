@@ -61,6 +61,7 @@ class AccessionForm(forms.Form):
     fishadd=forms.CharField(label=False, required=False, widget=forms.Select(choices=ADDCHOICES, attrs={'style': 'border: none; padding-left: 50px'}))
     cunsult=forms.CharField(max_length=30)
 
+
 class ImagesUploadForm(forms.Form):
     title = forms.CharField(max_length=50)
     image= forms.FileField(required=False)
