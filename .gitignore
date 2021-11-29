@@ -1,0 +1,2 @@
+# ignore all build artifacts (automatically generated Python bytecode files)
+*.pyc
