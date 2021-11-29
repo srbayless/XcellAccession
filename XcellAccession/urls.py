@@ -19,17 +19,17 @@ from django.conf.urls import url, include
 
 from authentication import views as auth_views
 from web_app import views
-from shared import routes
+from shared import names, routes
 
 urlpatterns = [
-    path(routes.ROUTE_ADMIN, admin.site.urls),
-    path(routes.ROUTE_DASHBOARD, views.IndexView, name='dashboard'),
-    path(routes.ROUTE_SIGNUP, auth_views.SignUpView),
-    path(routes.ROUTE_LOGIN, auth_views.LoginView.as_view(), name='login'),
-    path(routes.ROUTE_LOGOUT, auth_views.LogoutView, name = 'logout'),
-    path(routes.ROUTE_ACCESSION, views.AccessionView),
-    path(routes.ROUTE_REVIEW, views.editView, name='review'),
-    path(routes.ROUTE_FSFORM, views.TestingView),
-    path(routes.ROUTE_REPORTS, views.ReportView),
+    path(routes.ROUTE_ADMIN, admin.site.urls, name=names.NAME_ADMIN),
+    path(routes.ROUTE_DASHBOARD, views.IndexView, name=names.NAME_DASHBOARD),
+    path(routes.ROUTE_SIGNUP, auth_views.SignUpView, name=names.NAME_SIGNUP),
+    path(routes.ROUTE_LOGIN, auth_views.LoginView.as_view(), name=names.NAME_LOGIN),
+    path(routes.ROUTE_LOGOUT, auth_views.LogoutView, name=names.NAME_LOGOUT),
+    path(routes.ROUTE_ACCESSION, views.AccessionView, name=names.NAME_ACCESSION),
+    path(routes.ROUTE_REVIEW, views.editView, name=names.NAME_REVIEW),
+    path(routes.ROUTE_FSFORM, views.TestingView, name=names.NAME_TESTING),
+    path(routes.ROUTE_REPORTS, views.ReportView, name=names.NAME_REPORTS),
     url(r'^search/', include(('search.urls', 'search'), namespace='search')),
 ]
