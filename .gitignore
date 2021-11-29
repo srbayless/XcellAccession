@@ -1,2 +1,5 @@
 # ignore all build artifacts (automatically generated Python bytecode files)
 *.pyc
+
+# ignore the folder that holds the virtual environment data of 'poetry'
+.venv/
