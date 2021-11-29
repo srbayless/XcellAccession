@@ -15,20 +15,21 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from authentication import views as auth_views
-from web_app import views
 from django.conf.urls import url, include
 
+from authentication import views as auth_views
+from web_app import views
+from shared import routes
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', views.IndexView, name='dashboard'),
-    path('signup/', auth_views.SignUpView),
-    path('login/', auth_views.LoginView.as_view(), name='login'),
-    path('logout/', auth_views.LogoutView, name = 'logout'),
-    path('accession/', views.AccessionView),
-    path('review/', views.editView, name='review'),
-    path('FSform/', views.TestingView),
-    path('reports/', views.ReportView),
+    path(routes.ROUTE_ADMIN, admin.site.urls),
+    path(routes.ROUTE_DASHBOARD, views.IndexView, name='dashboard'),
+    path(routes.ROUTE_SIGNUP, auth_views.SignUpView),
+    path(routes.ROUTE_LOGIN, auth_views.LoginView.as_view(), name='login'),
+    path(routes.ROUTE_LOGOUT, auth_views.LogoutView, name = 'logout'),
+    path(routes.ROUTE_ACCESSION, views.AccessionView),
+    path(routes.ROUTE_REVIEW, views.editView, name='review'),
+    path(routes.ROUTE_FSFORM, views.TestingView),
+    path(routes.ROUTE_REPORTS, views.ReportView),
     url(r'^search/', include(('search.urls', 'search'), namespace='search')),
 ]
