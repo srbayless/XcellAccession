@@ -1,14 +1,16 @@
 from django.shortcuts import render,  HttpResponseRedirect, reverse, redirect
-from .forms import AccessionForm, FISHForm
-from .models import PatientModel, ReportModel, SpecimenModel, CaseModel, ReportSelectionModel
-from authentication.models import UserModel
 from django.core.paginator import Paginator, EmptyPage
 
+from .forms import AccessionForm, FISHForm
+from .models import PatientModel, ReportModel, SpecimenModel, CaseModel, ReportSelectionModel
 
+from authentication.models import UserModel
+from logged_only.views import LoggedOnlyView
 
-def IndexView(request):
-    header="dashboard"
-    return render(request, 'index.html', {'form': header })
+class IndexView(LoggedOnlyView):
+
+    def real_get(self, request):
+        return render(request, 'index.html', { 'form': 'dashboard' })
   
 # Create your views here.
 # def AccessionView(request):
@@ -133,33 +135,15 @@ def editView(request, patient_id, case_id, speciman_id, report_id):
     return render(request, "edit.html", {'form': form})
 
 
-def TestingView(request):
-    if request.method == "POST":
-        form = FISHForm(request.POST)
-        if form.is_valid:
-            data = form.cleaned_data
-            # report = FISHReport.objects.create(
-            #     results =
-            # )
+class TestingView(LoggedOnlyView):
 
-    form = FISHForm()
-    return render(request, 'FISHform.html', {'form': FISHForm()})
+    def real_get(self, request):
+        return render(request, 'FISHform.html', {'form': FISHForm()})
 
-def DashboardView(request):
-    if request.user.is_authenticated:
-        current_user = request.user
-        emptitle=UserModel.objects.all()
-        emptitle[0].title
-        cases = CaseModel.objects.all()
-        patients = PatientModel.objects.all()
-        for case in cases:
-            print(case.patient)
-        return render(request, 'index.html',{'current_user': current_user, 'cases': cases ,'emptitle': emptitle})
-    else:
-        return redirect("/login")
+class ReportView(LoggedOnlyView):
 
-def ReportView(request):
-    return render(request, 'reports.html')        
+    def real_get(self, request):
+        return render(request, 'reports.html')
 
 def QueryResults(request):
     results=PatientModel.object.all()

@@ -23,11 +23,11 @@ from shared import names, routes
 
 VIEW_ACCESSION = views.AccessionView
 VIEW_ADMIN = admin.site.urls
-VIEW_DASHBOARD = views.IndexView
-VIEW_FSFORM = views.TestingView
+VIEW_DASHBOARD = views.IndexView.as_view()
+VIEW_FSFORM = views.TestingView.as_view()
 VIEW_LOGIN = auth_views.LoginView.as_view()
 VIEW_LOGOUT = auth_views.LogoutView
-VIEW_REPORTS = views.ReportView
+VIEW_REPORTS = views.ReportView.as_view()
 VIEW_REVIEW = views.editView
 VIEW_SIGNUP = auth_views.SignUpView
 
