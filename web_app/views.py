@@ -6,11 +6,12 @@ from .models import PatientModel, ReportModel, SpecimenModel, CaseModel, ReportS
 
 from authentication.models import UserModel
 from logged_only.views import LoggedOnlyView
+from shared.layouts import main
 
 class IndexView(LoggedOnlyView):
 
     def real_get(self, request):
-        return render(request, 'index.html', { 'form': 'dashboard' })
+        return render(request, main.TEMPLATE_PATH, main.DEFAULT_CONTEXT_MAIN)
 
 class TestingView(LoggedOnlyView):
 
