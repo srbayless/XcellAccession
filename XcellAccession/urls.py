@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings
 from django.conf.urls import url, include
+from django.conf.urls.static import static
 
 from authentication import views as auth_views
 from web_app import views
@@ -40,4 +42,4 @@ urlpatterns = [
     path(routes.ROUTE_FSFORM, VIEW_FSFORM, name=names.NAME_FSFORM),
     path(routes.ROUTE_REPORTS, VIEW_REPORTS, name=names.NAME_REPORTS),
     url(r'^search/', include(('search.urls', 'search'), namespace='search')),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
