@@ -21,6 +21,7 @@ from authentication import views as auth_views
 from web_app import views
 from shared import names, routes
 
+VIEW_ACCESSION = views.AccessionView.as_view()
 VIEW_ADMIN = admin.site.urls
 VIEW_DASHBOARD = views.IndexView.as_view()
 VIEW_FSFORM = views.TestingView.as_view()
@@ -30,6 +31,7 @@ VIEW_REPORTS = views.ReportView.as_view()
 VIEW_SIGNUP = auth_views.SignUpView
 
 urlpatterns = [
+    path(routes.ROUTE_ACCESSION, VIEW_ACCESSION, name=names.NAME_ACCESSION),
     path(routes.ROUTE_ADMIN, VIEW_ADMIN, name=names.NAME_ADMIN),
     path(routes.ROUTE_DASHBOARD, VIEW_DASHBOARD, name=names.NAME_DASHBOARD),
     path(routes.ROUTE_SIGNUP, VIEW_SIGNUP, name=names.NAME_SIGNUP),

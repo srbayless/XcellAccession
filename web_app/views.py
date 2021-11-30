@@ -21,3 +21,9 @@ class ReportView(LoggedOnlyView):
 
     def real_get(self, request):
         return render(request, 'reports.html')
+
+class AccessionView(LoggedOnlyView):
+
+    def real_get(self, request):
+        form = AccessionForm()
+        return render(request, 'accession.html', { 'form': form })
