@@ -1,3 +1,5 @@
+from shared import names, routes
+
 # default values used by the main layout
 
 TEMPLATE_PATH = 'layouts/main/index.html'
@@ -8,7 +10,22 @@ DEFAULT_STYLESHEETS = [
 
 DEFAULT_CONTEXT_LOGO = {}
 DEFAULT_CONTEXT_USER = {}
-DEFAULT_CONTEXT_MENU = {}
+DEFAULT_CONTEXT_MENU = {
+    'navigation_links': {
+        names.NAME_ACCESSION: {
+            'label': 'ACCESSIONING',
+            'link': routes.ROUTE_ACCESSION,
+        },
+        names.NAME_REPORTS: {
+            'label': 'REPORTS',
+            'link': routes.ROUTE_REPORTS,
+        },
+        names.NAME_LOGOUT: {
+            'label': 'LOG OUT',
+            'link': routes.ROUTE_LOGOUT,
+        }
+    },
+}
 DEFAULT_CONTEXT_CONTENT = {}
 
 DEFAULT_CONTEXT_MAIN = {

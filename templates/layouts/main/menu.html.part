@@ -1,1 +1,13 @@
-<p>MENU</p>
+<nav class="NavigationLinks">
+    <ul class="NavigationLinks_list">
+        {% for link_key, link_entry in context_menu.navigation_links.items %}
+        {% if link_entry.selected %}
+        <li class="NavigationLinks_listItem NavigationLinks_selectedItem">
+        {% else %}
+        <li class="NavigationLinks_listItem">
+        {% endif %}
+            <a href="{{ link_entry.link }}">{{ link_entry.label }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</nav>
