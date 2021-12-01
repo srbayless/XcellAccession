@@ -6,7 +6,7 @@
         {% else %}
         <li class="NavigationLinks_listItem">
         {% endif %}
-            <a href="{{ link_entry.link }}">{{ link_entry.label }}</a>
+            <a href="/{{ link_entry.link }}">{{ link_entry.label }}</a>
         </li>
         {% endfor %}
     </ul>
