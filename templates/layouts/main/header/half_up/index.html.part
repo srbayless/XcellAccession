@@ -6,4 +6,7 @@
     <div class="HalfUp_followUpLink">
         <a href="/follow_ups/">Follow-Ups ({{ context_follow_ups.count_pending }})</a>
     </div>
+    <div class="HalfUp_facilitiesLink">
+        <a href="/facilities/">Facilities ({{ context_facilities.count_pending }})</a>
+    </div>
 </div>

@@ -11,6 +11,9 @@ DEFAULT_STYLESHEETS = [
 ]
 
 DEFAULT_CONTEXT_CONTENT = {}
+DEFAULT_CONTEXT_FACILITIES = {
+    'count_pending': 0,
+}
 DEFAULT_CONTEXT_FOLLOW_UPS = {
     'count_pending': 0,
 }
@@ -21,6 +24,7 @@ DEFAULT_CONTEXT_MAIN = {
     'template_header': templates.TEMPLATE_HEADER,
     'template_content': templates.TEMPLATE_DEFAULT,
     'context_content': DEFAULT_CONTEXT_CONTENT,
+    'context_facilities': DEFAULT_CONTEXT_FACILITIES,
     'context_follow_ups': DEFAULT_CONTEXT_FOLLOW_UPS,
 }
 
