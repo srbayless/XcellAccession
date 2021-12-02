@@ -1,3 +1,5 @@
+from copy import deepcopy
+
 from shared import names, routes, templates
 
 # default values used by the main layout
@@ -17,3 +19,6 @@ DEFAULT_CONTEXT_MAIN = {
     'template_content': templates.TEMPLATE_DEFAULT,
     'context_content': DEFAULT_CONTEXT_CONTENT,    
 }
+
+def GENERATE_DEFAULT_CONTEXT():
+    return deepcopy(DEFAULT_CONTEXT_MAIN)
