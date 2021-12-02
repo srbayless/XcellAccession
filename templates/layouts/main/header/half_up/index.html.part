@@ -12,4 +12,7 @@
     <div class="HalfUp_changePasswordLink">
         <a href="/change_password/">Change Password</a>
     </div>
+    <div class="HalfUp_logOutLink">
+        <a href="/logout/">LOGOUT</a>
+    </div>
 </div>
