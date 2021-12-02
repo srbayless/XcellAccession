@@ -9,4 +9,7 @@
     <div class="HalfUp_facilitiesLink">
         <a href="/facilities/">Facilities ({{ context_facilities.count_pending }})</a>
     </div>
+    <div class="HalfUp_changePasswordLink">
+        <a href="/change_password/">Change Password</a>
+    </div>
 </div>
