@@ -1,0 +1,14 @@
+<div class="UserOptions">
+    <div class="UserOptions_label">
+        <span>User Options:</span>
+    </div>
+    <div class="UserOptions_myActivity">
+        <a href="/activity/">My Activity</a>
+    </div>
+    <div class="UserOptions_favorites">
+        <a href="/favorites/">Favorites ({{ context_user_options.count_favorites }})</a>
+    </div>
+    <div class="UserOptions_toDo">
+        <a href="/to_do/">To Do ({{ context_user_options.count_to_do }})</a>
+    </div>
+</div>

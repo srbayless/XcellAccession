@@ -1,5 +1,5 @@
 <div class="HalfDown">
     <div class="HalfDown_logo"></div>
     <div class="HalfDown_menu">{% include 'layouts/main/header/half_down/menu.html.part' %}</div>
-    <div class="HalfDown_userOptions"></div>
+    <div class="HalfDown_userOptions">{% include 'layouts/main/header/half_down/user_options.html.part' %}</div>
 </div>

@@ -11,6 +11,7 @@ DEFAULT_STYLESHEETS = [
     'assets/css/main/header/half_up.css',
     'assets/css/main/header/half_down/index.css',
     'assets/css/main/header/half_down/menu.css',
+    'assets/css/main/header/half_down/user_options.css',
 ]
 
 DEFAULT_CONTEXT_CONTENT = {}
@@ -48,6 +49,10 @@ DEFAULT_CONTEXT_MENU = {
         },
     }
 }
+DEFAULT_CONTEXT_USER_OPTIONS = {
+    'count_favorites': 0,
+    'count_to_do': 0,
+}
 
 DEFAULT_CONTEXT_MAIN = {
     'page_title': 'Page Title',
@@ -58,6 +63,7 @@ DEFAULT_CONTEXT_MAIN = {
     'context_facilities': DEFAULT_CONTEXT_FACILITIES,
     'context_follow_ups': DEFAULT_CONTEXT_FOLLOW_UPS,
     'context_menu': DEFAULT_CONTEXT_MENU,
+    'context_user_options': DEFAULT_CONTEXT_USER_OPTIONS,
 }
 
 def GENERATE_DEFAULT_CONTEXT():
