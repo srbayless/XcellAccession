@@ -1,3 +1,13 @@
+.HalfDown {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: auto;
+    grid-gap: 12px;
+
+    align-items: center;
+    justify-content: center;
+}
+
 .HalfDown_logo {
     background: url('/static/assets/img/logo.png');
     background-position: center;

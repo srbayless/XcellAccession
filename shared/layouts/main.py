@@ -9,7 +9,8 @@ TEMPLATE_PATH = 'layouts/main/index.html'
 DEFAULT_STYLESHEETS = [
     'assets/css/main.css',
     'assets/css/main/header/half_up.css',
-    'assets/css/main/header/half_down.css',
+    'assets/css/main/header/half_down/index.css',
+    'assets/css/main/header/half_down/menu.css',
 ]
 
 DEFAULT_CONTEXT_CONTENT = {}
@@ -18,6 +19,34 @@ DEFAULT_CONTEXT_FACILITIES = {
 }
 DEFAULT_CONTEXT_FOLLOW_UPS = {
     'count_pending': 0,
+}
+DEFAULT_CONTEXT_MENU = {
+    'navigation_links': {
+        names.NAME_ACCESSION: {
+            'label': 'Add New Case',
+            'link': routes.ROUTE_ACCESSION,
+        },
+        names.NAME_FLOFORM: {
+            'label': 'Pre-Acessioning',
+            'link': routes.ROUTE_FLOFORM,
+        },
+        names.NAME_DASHBOARD: {
+            'label': 'Main Dashboard',
+            'link': routes.ROUTE_DASHBOARD,
+        },
+        names.NAME_COMPLETED_CASES: {
+            'label': 'Completed Cases',
+            'link': routes.ROUTE_COMPLETED_CASES,
+        },
+        names.NAME_UTILITIES: {
+            'label': 'Utilities',
+            'link': routes.ROUTE_UTILITIES,
+        },
+        names.NAME_REPORTS: {
+            'label': 'Reports',
+            'link': routes.ROUTE_REPORTS,
+        },
+    }
 }
 
 DEFAULT_CONTEXT_MAIN = {
@@ -28,6 +57,7 @@ DEFAULT_CONTEXT_MAIN = {
     'context_content': DEFAULT_CONTEXT_CONTENT,
     'context_facilities': DEFAULT_CONTEXT_FACILITIES,
     'context_follow_ups': DEFAULT_CONTEXT_FOLLOW_UPS,
+    'context_menu': DEFAULT_CONTEXT_MENU,
 }
 
 def GENERATE_DEFAULT_CONTEXT():
