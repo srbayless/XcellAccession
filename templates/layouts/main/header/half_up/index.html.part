@@ -3,4 +3,7 @@
     <div class="HalfUp_profileLink">
         <a href="/profile/">Profile</a>
     </div>
+    <div class="HalfUp_followUpLink">
+        <a href="/follow_ups/">Follow-Ups ({{ context_follow_ups.count_pending }})</a>
+    </div>
 </div>
