@@ -1,1 +1,3 @@
-<p>HALF UP</p>
+<div class="HalfUp">
+    <div class="HalfUp_welcomeSign">{% include 'layouts/main/header/half_up/user.html.part' %}</div>
+</div>
