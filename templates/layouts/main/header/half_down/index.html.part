@@ -1,1 +1,5 @@
-<p>HALF DOWN</p>
+<div class="HalfDown">
+    <div class="HalfDown_logo"></div>
+    <div class="HalfDown_menu"></div>
+    <div class="HalfDown_userOptions"></div>
+</div>

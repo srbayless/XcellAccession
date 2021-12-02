@@ -9,6 +9,7 @@ TEMPLATE_PATH = 'layouts/main/index.html'
 DEFAULT_STYLESHEETS = [
     'assets/css/main.css',
     'assets/css/main/header/half_up.css',
+    'assets/css/main/header/half_down.css',
 ]
 
 DEFAULT_CONTEXT_CONTENT = {}
