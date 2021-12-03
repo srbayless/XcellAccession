@@ -1,0 +1,35 @@
+.NavigationLinks {
+    padding: 12px;
+}
+
+.NavigationLinks a {
+    text-decoration: inherit;
+    color: inherit;
+}
+
+.NavigationLinks_list {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+    grid-gap: 12px;
+
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+.NavigationLinks_listItem {
+    display: block;
+
+    background: white;
+    color: black;
+
+    border: 1px solid black;
+    border-radius: 12px;
+    padding: 12px;
+}
+
+.NavigationLinks_selectedItem {
+    background: black;
+    color: white;
+}

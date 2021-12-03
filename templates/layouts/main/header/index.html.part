@@ -1,0 +1,4 @@
+<div class="Header">
+    <div class="Header_halfUp">{% include 'layouts/main/header/half_up/index.html.part' %}</div>
+    <div class="Header_halfDown">{% include 'layouts/main/header/half_down/index.html.part' %}</div>
+</div>

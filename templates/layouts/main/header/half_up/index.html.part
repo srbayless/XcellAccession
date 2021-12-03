@@ -1,0 +1,18 @@
+<div class="HalfUp">
+    <div class="HalfUp_welcomeSign">{% include 'layouts/main/header/half_up/user.html.part' %}</div>
+    <div class="HalfUp_profileLink">
+        <a href="/profile/">Profile</a>
+    </div>
+    <div class="HalfUp_followUpLink">
+        <a href="/follow_ups/">Follow-Ups ({{ context_follow_ups.count_pending }})</a>
+    </div>
+    <div class="HalfUp_facilitiesLink">
+        <a href="/facilities/">Facilities ({{ context_facilities.count_pending }})</a>
+    </div>
+    <div class="HalfUp_changePasswordLink">
+        <a href="/change_password/">Change Password</a>
+    </div>
+    <div class="HalfUp_logOutLink">
+        <a href="/logout/">LOGOUT</a>
+    </div>
+</div>

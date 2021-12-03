@@ -15,20 +15,31 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings
+from django.conf.urls import url, include
+from django.conf.urls.static import static
+
 from authentication import views as auth_views
 from web_app import views
-from django.conf.urls import url, include
+from shared import names, routes
 
+VIEW_ACCESSION = views.AccessionView.as_view()
+VIEW_ADMIN = admin.site.urls
+VIEW_DASHBOARD = views.IndexView.as_view()
+VIEW_FSFORM = views.TestingView.as_view()
+VIEW_LOGIN = auth_views.LoginView.as_view()
+VIEW_LOGOUT = auth_views.LogoutView
+VIEW_REPORTS = views.ReportView.as_view()
+VIEW_SIGNUP = auth_views.SignUpView
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', views.IndexView, name='dashboard'),
-    path('signup/', auth_views.SignUpView),
-    path('login/', auth_views.LoginView.as_view(), name='login'),
-    path('logout/', auth_views.LogoutView, name = 'logout'),
-    path('accession/', views.AccessionView),
-    path('review/', views.editView, name='review'),
-    path('FSform/', views.TestingView),
-    path('reports/', views.ReportView),
+    path(routes.ROUTE_ACCESSION, VIEW_ACCESSION, name=names.NAME_ACCESSION),
+    path(routes.ROUTE_ADMIN, VIEW_ADMIN, name=names.NAME_ADMIN),
+    path(routes.ROUTE_DASHBOARD, VIEW_DASHBOARD, name=names.NAME_DASHBOARD),
+    path(routes.ROUTE_SIGNUP, VIEW_SIGNUP, name=names.NAME_SIGNUP),
+    path(routes.ROUTE_LOGIN, VIEW_LOGIN, name=names.NAME_LOGIN),
+    path(routes.ROUTE_LOGOUT, VIEW_LOGOUT, name=names.NAME_LOGOUT),
+    path(routes.ROUTE_FSFORM, VIEW_FSFORM, name=names.NAME_FSFORM),
+    path(routes.ROUTE_REPORTS, VIEW_REPORTS, name=names.NAME_REPORTS),
     url(r'^search/', include(('search.urls', 'search'), namespace='search')),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

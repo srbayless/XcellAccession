@@ -1,0 +1,23 @@
+body {
+    min-width: 100vw;
+    min-height: 100vh;
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.MainLayout {
+    min-width: 100vw;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
+}
+
+.MainLayout_header {
+    grid-area: 1/1/2/2;
+}
+
+.MainLayout_content {
+    grid-area: 2/1/3/2;
+}

@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8" />
+        <title>{{ page_title }}</title>
+        {% for link_stylesheet in links_stylesheet %}
+        <link rel="stylesheet" href="{% static link_stylesheet %}" />
+        {% endfor %}
+    </head>
+    <body>
+        <div class="MainLayout">
+            <div class="MainLayout_header">{% include template_header %}</div>
+            <div class="MainLayout_content">{% include template_content %}</div>
+        </div>
+    </body>
+</html>
