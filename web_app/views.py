@@ -6,7 +6,7 @@ from .models import PatientModel, ReportModel, SpecimenModel, CaseModel, ReportS
 
 from authentication.models import UserModel
 from logged_only.views import LoggedOnlyView
-from shared import templates
+from shared import names, templates
 from shared.layouts import main
 
 class IndexView(LoggedOnlyView):
@@ -14,6 +14,8 @@ class IndexView(LoggedOnlyView):
     def real_get(self, request):
         context_main = main.GENERATE_DEFAULT_CONTEXT()
         context_main['template_content'] = templates.TEMPLATE_DASHBOARD
+        navigation_links = context_main['context_menu']['navigation_links']
+        navigation_links[names.NAME_DASHBOARD]['selected'] = True
         return render(request, main.TEMPLATE_PATH, context_main)
 
 class TestingView(LoggedOnlyView):
