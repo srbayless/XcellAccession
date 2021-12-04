@@ -1,0 +1,12 @@
+README.md
+setup.py
+xcellaccession/__init__.py
+xcellaccession/asgi.py
+xcellaccession/settings.py
+xcellaccession/urls.py
+xcellaccession/wsgi.py
+xcellaccession.egg-info/PKG-INFO
+xcellaccession.egg-info/SOURCES.txt
+xcellaccession.egg-info/dependency_links.txt
+xcellaccession.egg-info/requires.txt
+xcellaccession.egg-info/top_level.txt

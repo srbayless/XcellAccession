@@ -1,1 +1,1 @@
-<div className="WelcomeSign">Welcome, {{ user.username }}</div>
+<div className="WelcomeSign">Welcome, {{ user.username }}({{user.title}})</div>

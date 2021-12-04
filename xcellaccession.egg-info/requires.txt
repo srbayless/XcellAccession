@@ -1,0 +1,6 @@
+django-filter<22.0,>=21.1
+django-phone-field<2.0.0,>=1.8.1
+django-phonenumber-field[phonenumbers]<7.0.0,>=6.0.0
+django-rest-framework<0.2.0,>=0.1.0
+django<4.0.0,>=3.2.9
+pillow<9.0.0,>=8.4.0

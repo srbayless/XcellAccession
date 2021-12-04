@@ -4,7 +4,6 @@ body {
     border: 0;
     margin: 0;
     padding: 0;
-    
 }
 
 .MainLayout {
@@ -13,12 +12,10 @@ body {
     display: grid;
     grid-template-columns: auto 1fr;
     grid-template-rows: auto 1fr;
-    
 }
 
 .MainLayout_header {
     grid-area: 1/1/2/2;
-  
 }
 
 .MainLayout_content {

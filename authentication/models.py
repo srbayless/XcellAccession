@@ -8,6 +8,7 @@ class UserModel(AbstractUser):
     last_name = models.CharField(max_length=30)
     department = models.CharField(max_length=30)
     title = models.CharField(max_length=30)
+    email = models.EmailField(max_length=200)
     avatar_image = models.ImageField(upload_to='images/', null=True, blank=True) 
 
 # Create your models here.

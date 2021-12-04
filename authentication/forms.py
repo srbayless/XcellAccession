@@ -18,6 +18,7 @@ class SignUpForm(forms.Form):
     title = forms.ChoiceField(choices=TITCHOICES, label = False, widget=Select(attrs={'style': 'height: 45px; width: 220px', 'class': 'form-control', 'class': 'col-md-6 mb-4'}))
     username = forms.CharField(label = False, widget=forms.TextInput(attrs={'placeholder': 'Username', 'style': 'height: 45px; width: 220px; margin-bottom: 10px; margin-right: 20px', 'class': 'form-control', 'class': 'col-md-6 mb-4'}))
     password = forms.CharField(label = False, widget=forms.TextInput(attrs={'placeholder': 'Temporary Password', 'style': 'height: 45px; width: 220px; margin-bottom: 10px; margin-right: 20px', 'class': 'form-control', 'class': 'col-md-6 mb-4'}))
+    email = forms.EmailField(label=False, widget=forms.TextInput(attrs={'placeholder': 'Email Address', 'style': 'height: 45px; width: 220px; margin-bottom: 10px; margin-right: 20px', 'class': 'form-control', 'class': 'col-md-6 mb-4'}))
     avatar_image= forms.FileField(required=False)
 
 class ImagesUploadForm(forms.Form):
