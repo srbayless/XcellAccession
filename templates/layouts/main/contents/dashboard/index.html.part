@@ -1,0 +1,6 @@
+<div class="Dashboard">
+    <div class="Dashboard_tableTotals">{% include 'layouts/main/contents/dashboard/table_totals.html.part' %}</div>
+    <div class="Dashboard_requestSummary">{% include 'layouts/main/contents/dashboard/request_summary.html.part' %}</div>
+    <div class="Dashboard_advancedSearch">{% include 'layouts/main/contents/dashboard/advanced_search.html.part' %}</div>
+    <div class="Dashboard_tablePatients">{% include 'layouts/main/contents/dashboard/table_patients.html.part' %}</div>
+</div>
