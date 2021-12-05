@@ -1,1 +1,18 @@
-<p>TABLE TOTALS</p>
+<table class="TableTotals">
+    <thead>
+        <tr>
+        {% for header in context_totals.headers %}
+            <th>{{ header }}</th>
+        {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in context_totals.table %}
+            <tr>
+            {% for column in row %}
+                <td>{{ column }}</td>
+            {% endfor %}
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
