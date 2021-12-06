@@ -1,6 +1,21 @@
 from copy import deepcopy
 
 from shared import names, routes, templates
+from shared.tables import totals as tables_totals
+
+# methods used by the main layout
+def GENERATE_TABLE_HEADERS(dictionary_headers, keys_column):
+    return [dictionary_headers[key_column] for key_column in keys_column]
+
+def GENERATE_TABLE_CELLS(dictionary_table, keys_column, keys_row):
+    table = []
+    for key_row in keys_row:
+        row = []
+        for key_column in keys_column:
+            cell = dictionary_table[key_column][key_row]
+            row.append(cell)
+        table.append(row)
+    return table
 
 # default values used by the main layout
 
@@ -50,6 +65,19 @@ DEFAULT_CONTEXT_MENU = {
         },
     }
 }
+DEFAULT_CONTEXT_TOTALS = {
+    'key_columns': tables_totals.KEY_COLUMNS,
+    'key_rows': tables_totals.KEY_ROWS,
+    'headers': GENERATE_TABLE_HEADERS(
+        tables_totals.DEFAULT_HEADERS,
+        tables_totals.KEY_COLUMNS,
+    ),
+    'table': GENERATE_TABLE_CELLS(
+        tables_totals.DEFAULT_TABLE,
+        tables_totals.KEY_COLUMNS,
+        tables_totals.KEY_ROWS,
+    ),
+}
 DEFAULT_CONTEXT_USER_OPTIONS = {
     'count_favorites': 0,
     'count_to_do': 0,
@@ -65,6 +93,7 @@ DEFAULT_CONTEXT_MAIN = {
     'context_follow_ups': DEFAULT_CONTEXT_FOLLOW_UPS,
     'context_menu': DEFAULT_CONTEXT_MENU,
     'context_user_options': DEFAULT_CONTEXT_USER_OPTIONS,
+    'context_totals': DEFAULT_CONTEXT_TOTALS,
 }
 
 def GENERATE_DEFAULT_CONTEXT():

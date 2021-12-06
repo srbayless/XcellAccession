@@ -1,0 +1,23 @@
+.Dashboard {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-gap: 12px;
+    padding: 12px;
+}
+
+.Dashboard_tableTotals {
+    grid-area: 1/1/2/2;
+}
+
+.Dashboard_requestSummary {
+    grid-area: 1/2/2/3;
+}
+
+.Dashboard_advancedSearch {
+    grid-area: 1/3/2/4;
+}
+
+.Dashboard_tablePatients {
+    grid-area: 2/1/3/4;
+}
