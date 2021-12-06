@@ -31,5 +31,6 @@ class ReportView(LoggedOnlyView):
 class AccessionView(LoggedOnlyView):
 
     def real_get(self, request):
-        form = AccessionForm()
-        return render(request, 'accession.html', { 'form': form })
+        context_main = main.GENERATE_DEFAULT_CONTEXT()
+        context_main['template_content'] = templates.TEMPLATE_ACCESSION
+        return render(request, main.TEMPLATE_PATH, context_main)

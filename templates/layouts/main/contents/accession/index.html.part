@@ -1,0 +1,14 @@
+<div class="Accession">
+    <div class="Accession_patientProviderInformation">
+        <h2>Patient & Provider Information</h2>
+    </div>
+    <div class="Accession_specimenInformation">
+        <h2>Specimen Information</h2>
+    </div>
+    <div class="Accession_accessionOptions">
+        <h2>Accession Options</h2>
+    </div>
+    <div class="Accession_billingResponsibility">
+        <h2>Billing Responsibility</h2>
+    </div>
+</div>
